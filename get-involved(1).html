@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved | Cynthia Butler for FL House District 75</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --cb-blue:     #1a3a6b;
+      --cb-blue-mid: #2255a4;
+      --cb-red:      #c8102e;
+      --cb-black:    #111111;
+      --cb-white:    #ffffff;
+    }
+    body { font-family: 'Segoe UI', sans-serif; color: var(--cb-black); }
+
+    /* ── NAV ── */
+    .navbar { background: var(--cb-blue) !important; border-bottom: 4px solid var(--cb-red); }
+    .navbar-brand { font-weight: 900; font-size: 1.3rem; letter-spacing: 0.03em; color: var(--cb-white) !important; }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.07em; }
+    .nav-link:hover { color: var(--cb-white) !important; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, var(--cb-blue) 60%, var(--cb-blue-mid) 100%);
+      color: var(--cb-white); padding: 60px 0 50px;
+      border-bottom: 5px solid var(--cb-red);
+    }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .page-header p { font-size: 1rem; opacity: 0.75; margin-bottom: 0; }
+
+    /* ── STRIPE ── */
+    .stripe { height: 6px; background: linear-gradient(to right, var(--cb-blue) 50%, var(--cb-red) 50%); }
+
+    /* ── SECTION ── */
+    .section-label { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; font-weight: 700; color: var(--cb-red); margin-bottom: 0.25rem; }
+    .section-heading { font-size: 1.8rem; font-weight: 900; color: var(--cb-blue); margin-bottom: 0.5rem; }
+
+    /* ── ACTION CARDS ── */
+    .action-card {
+      border: none; border-top: 5px solid var(--cb-blue);
+      border-radius: 6px; padding: 2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+      height: 100%;
+    }
+    .action-card.donate-card { border-top-color: var(--cb-red); }
+    .action-card .card-icon { font-size: 2.5rem; color: var(--cb-blue); margin-bottom: 1rem; }
+    .action-card.donate-card .card-icon { color: var(--cb-red); }
+    .action-card h3 { font-weight: 900; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cb-blue); margin-bottom: 0.5rem; }
+    .action-card.donate-card h3 { color: var(--cb-red); }
+    .action-card p { font-size: 0.95rem; color: #555; margin-bottom: 1.25rem; }
+
+    /* ── BUTTONS ── */
+    .btn-primary-cb {
+      background: var(--cb-red); color: var(--cb-white); border: none;
+      padding: 0.75rem 2rem; font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: 0.08em; border-radius: 4px;
+      text-decoration: none; display: inline-block; transition: background 0.2s; width: 100%; text-align: center;
+    }
+    .btn-primary-cb:hover { background: #a50d26; color: var(--cb-white); }
+    .btn-blue-cb {
+      background: var(--cb-blue); color: var(--cb-white); border: none;
+      padding: 0.75rem 2rem; font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: 0.08em; border-radius: 4px;
+      text-decoration: none; display: inline-block; transition: background 0.2s; width: 100%; text-align: center;
+    }
+    .btn-blue-cb:hover { background: #122d55; color: var(--cb-white); }
+
+    /* ── VOLUNTEER FORM ── */
+    .form-label { font-weight: 600; font-size: 0.9rem; color: var(--cb-blue); }
+    .form-control:focus { border-color: var(--cb-blue); box-shadow: 0 0 0 0.2rem rgba(26,58,107,0.2); }
+    .form-check-input:checked { background-color: var(--cb-blue); border-color: var(--cb-blue); }
+
+    /* ── DONATE AMOUNTS ── */
+    .donate-amounts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .donate-btn {
+      border: 2px solid var(--cb-red); color: var(--cb-red); background: none;
+      padding: 0.4rem 1.2rem; font-weight: 700; font-size: 0.9rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .donate-btn:hover, .donate-btn.active { background: var(--cb-red); color: var(--cb-white); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--cb-black); color: rgba(255,255,255,0.55); padding: 32px 0; font-size: 0.82rem; text-align: center; }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    footer a:hover { color: var(--cb-white); }
+    footer .footer-name { color: var(--cb-white); font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Cynthia Butler</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="issues.html">Issues</a></li>
+          <li class="nav-item"><a class="nav-link" href="get-involved.html">Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-2">
+            <a class="btn-primary-cb" href="#donate" style="padding:0.4rem 1.2rem;font-size:0.82rem;width:auto;">Donate</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Get Involved</h1>
+      <p>This campaign runs on people power. Here's how you can help win District 75.</p>
+    </div>
+  </div>
+
+  <div class="stripe"></div>
+
+  <!-- ACTION CARDS -->
+  <section class="py-5">
+    <div class="container py-3">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="action-card text-center">
+            <div class="card-icon"><i class="bi bi-door-open"></i></div>
+            <h3>Knock Doors</h3>
+            <p>The most powerful way to win votes. Join Cynthia's canvassing team and meet neighbors face to face.</p>
+            <a href="#volunteer-form" class="btn-blue-cb">Sign Up to Canvass</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="action-card text-center">
+            <div class="card-icon"><i class="bi bi-megaphone"></i></div>
+            <h3>Spread the Word</h3>
+            <p>Share Cynthia's posts, host a yard sign, or invite your neighbors to a local meet-and-greet.</p>
+            <a href="#volunteer-form" class="btn-blue-cb">Join the Team</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="action-card donate-card text-center" id="donate">
+            <div class="card-icon"><i class="bi bi-heart-fill"></i></div>
+            <h3>Donate</h3>
+            <p>Small-dollar donations from local supporters power everything — mailers, events, yard signs, and more.</p>
+            <!-- Donate amounts -->
+            <div class="donate-amounts justify-content-center mb-3">
+              <button class="donate-btn">$25</button>
+              <button class="donate-btn">$50</button>
+              <button class="donate-btn">$100</button>
+              <button class="donate-btn">$250</button>
+            </div>
+            <!-- PLACEHOLDER: Replace href with real donation platform link (ActBlue or similar) -->
+            <a href="#" class="btn-primary-cb">Donate Now</a>
+            <p class="mt-2 text-muted" style="font-size:0.75rem;">Paid for by Cynthia Butler for FL House District 75</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER SIGNUP FORM -->
+  <section class="py-5" style="background:#f7f9fc;" id="volunteer-form">
+    <div class="container py-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <p class="section-label">Volunteer</p>
+          <h2 class="section-heading">Join the Team</h2>
+          <p class="text-muted mb-4">Fill out the form below and a member of the campaign team will be in touch within 48 hours.</p>
+
+          <!-- Netlify Form -->
+          <form name="volunteer" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="volunteer" />
+            <p class="d-none">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label" for="vol-first">First Name *</label>
+                <input type="text" class="form-control" id="vol-first" name="first_name" required />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="vol-last">Last Name *</label>
+                <input type="text" class="form-control" id="vol-last" name="last_name" required />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="vol-email">Email *</label>
+                <input type="email" class="form-control" id="vol-email" name="email" required />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="vol-phone">Phone</label>
+                <input type="tel" class="form-control" id="vol-phone" name="phone" />
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="vol-zip">Zip Code *</label>
+                <input type="text" class="form-control" id="vol-zip" name="zip" maxlength="5" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label d-block mb-2">I want to help with: (check all that apply)</label>
+                <div class="row g-2">
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="door_knocking" id="h1"><label class="form-check-label" for="h1">Door knocking / canvassing</label></div></div>
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="phone_bank" id="h2"><label class="form-check-label" for="h2">Phone banking</label></div></div>
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="events" id="h3"><label class="form-check-label" for="h3">Events &amp; meet-and-greets</label></div></div>
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="social_media" id="h4"><label class="form-check-label" for="h4">Social media sharing</label></div></div>
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="yard_sign" id="h5"><label class="form-check-label" for="h5">Yard sign in my yard</label></div></div>
+                  <div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="help[]" value="fundraising" id="h6"><label class="form-check-label" for="h6">Help with fundraising</label></div></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="vol-message">Anything else you'd like us to know?</label>
+                <textarea class="form-control" id="vol-message" name="message" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-blue-cb" style="width:auto; padding:0.75rem 2.5rem;">Sign Me Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-name">Cynthia Butler for Florida House District 75</div>
+      <p class="mb-1">Paid for by Cynthia Butler for Florida House District 75</p>
+      <p class="mb-2">[Campaign HQ Address] &mdash; Sarasota / Charlotte County, FL</p>
+      <div class="d-flex justify-content-center gap-3 mb-2">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
+      <p class="mb-0"><a href="contact.html">Contact</a> &middot; <a href="get-involved.html">Get Involved</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Donate button highlight
+    document.querySelectorAll('.donate-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.donate-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
