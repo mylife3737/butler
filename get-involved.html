@@ -8,79 +8,95 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <style>
     :root {
-      --cb-blue:     #1a3a6b;
-      --cb-blue-mid: #2255a4;
+      --cb-blue:     #0052cc;
+      --cb-blue-mid: #1f6feb;
+      --cb-accent:   #2c5aa0;
       --cb-red:      #c8102e;
-      --cb-black:    #111111;
+      --cb-black:    #0a0e27;
       --cb-white:    #ffffff;
+      --cb-dark-bg:  #0f1419;
     }
     body { font-family: 'Segoe UI', sans-serif; color: var(--cb-black); }
 
     /* ── NAV ── */
-    .navbar { background: var(--cb-blue) !important; border-bottom: 4px solid var(--cb-red); }
-    .navbar-brand { font-weight: 900; font-size: 1.3rem; letter-spacing: 0.03em; color: var(--cb-white) !important; }
-    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.07em; }
-    .nav-link:hover { color: var(--cb-white) !important; }
+    .navbar { background: var(--cb-blue) !important; border-bottom: 4px solid var(--cb-accent); box-shadow: 0 4px 12px rgba(0,82,204,0.15); }
+    .navbar-brand { font-weight: 900; font-size: 1.5rem; letter-spacing: 0.03em; color: var(--cb-white) !important; transition: all 0.3s ease; }
+    .navbar-brand:hover { transform: scale(1.05); }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.08em; position: relative; transition: all 0.3s ease; }
+    .nav-link:hover { color: var(--cb-white) !important; transform: translateY(-2px); }
+    .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--cb-accent); transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
 
     /* ── PAGE HEADER ── */
     .page-header {
-      background: linear-gradient(135deg, var(--cb-blue) 60%, var(--cb-blue-mid) 100%);
-      color: var(--cb-white); padding: 60px 0 50px;
-      border-bottom: 5px solid var(--cb-red);
+      background: linear-gradient(135deg, var(--cb-blue) 0%, var(--cb-blue-mid) 100%);
+      color: var(--cb-white);
+      padding: 80px 0 70px;
+      border-bottom: 5px solid var(--cb-accent);
+      box-shadow: 0 8px 32px rgba(0,82,204,0.2);
+      position: relative;
+      overflow: hidden;
     }
-    .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
-    .page-header p { font-size: 1rem; opacity: 0.75; margin-bottom: 0; }
+    .page-header::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+    .page-header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; animation: fadeInDown 0.8s ease; }
+    .page-header p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 0; font-weight: 600; letter-spacing: 0.05em; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ── STRIPE ── */
-    .stripe { height: 6px; background: linear-gradient(to right, var(--cb-blue) 50%, var(--cb-red) 50%); }
+    .stripe { height: 6px; background: linear-gradient(to right, var(--cb-blue) 50%, var(--cb-accent) 50%); }
 
     /* ── SECTION ── */
-    .section-label { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; font-weight: 700; color: var(--cb-red); margin-bottom: 0.25rem; }
-    .section-heading { font-size: 1.8rem; font-weight: 900; color: var(--cb-blue); margin-bottom: 0.5rem; }
+    .section-label { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.85rem; font-weight: 800; color: var(--cb-accent); margin-bottom: 0.5rem; }
+    .section-heading { font-size: 2rem; font-weight: 900; color: var(--cb-blue); margin-bottom: 1.25rem; letter-spacing: -0.01em; }
 
     /* ── ACTION CARDS ── */
     .action-card {
-      border: none; border-top: 5px solid var(--cb-blue);
-      border-radius: 6px; padding: 2rem;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+      border: none; border-top: 5px solid var(--cb-accent);
+      border-radius: 8px; padding: 2.25rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       height: 100%;
+      transition: all 0.3s ease;
     }
+    .action-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,82,204,0.15); }
     .action-card.donate-card { border-top-color: var(--cb-red); }
-    .action-card .card-icon { font-size: 2.5rem; color: var(--cb-blue); margin-bottom: 1rem; }
+    .action-card .card-icon { font-size: 3rem; color: var(--cb-blue); margin-bottom: 1.25rem; }
     .action-card.donate-card .card-icon { color: var(--cb-red); }
-    .action-card h3 { font-weight: 900; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cb-blue); margin-bottom: 0.5rem; }
+    .action-card h3 { font-weight: 900; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--cb-blue); margin-bottom: 0.75rem; }
     .action-card.donate-card h3 { color: var(--cb-red); }
-    .action-card p { font-size: 0.95rem; color: #555; margin-bottom: 1.25rem; }
+    .action-card p { font-size: 1rem; color: #666; margin-bottom: 1.5rem; line-height: 1.6; }
 
     /* ── BUTTONS ── */
     .btn-primary-cb {
-      background: var(--cb-red); color: var(--cb-white); border: none;
-      padding: 0.75rem 2rem; font-weight: 700; font-size: 1rem;
-      text-transform: uppercase; letter-spacing: 0.08em; border-radius: 4px;
-      text-decoration: none; display: inline-block; transition: background 0.2s; width: 100%; text-align: center;
+      background: var(--cb-accent); color: var(--cb-white); border: none;
+      padding: 0.9rem 2.4rem; font-weight: 800; font-size: 1.05rem;
+      text-transform: uppercase; letter-spacing: 0.1em; border-radius: 6px;
+      text-decoration: none; display: inline-block; transition: all 0.3s ease; width: 100%; text-align: center;
+      box-shadow: 0 4px 16px rgba(44,90,160,0.3);
     }
-    .btn-primary-cb:hover { background: #a50d26; color: var(--cb-white); }
+    .btn-primary-cb:hover { background: var(--cb-blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,82,204,0.4); }
     .btn-blue-cb {
       background: var(--cb-blue); color: var(--cb-white); border: none;
-      padding: 0.75rem 2rem; font-weight: 700; font-size: 1rem;
-      text-transform: uppercase; letter-spacing: 0.08em; border-radius: 4px;
-      text-decoration: none; display: inline-block; transition: background 0.2s; width: 100%; text-align: center;
+      padding: 0.9rem 2.4rem; font-weight: 800; font-size: 1.05rem;
+      text-transform: uppercase; letter-spacing: 0.1em; border-radius: 6px;
+      text-decoration: none; display: inline-block; transition: all 0.3s ease; width: 100%; text-align: center;
+      box-shadow: 0 4px 16px rgba(0,82,204,0.3);
     }
-    .btn-blue-cb:hover { background: #122d55; color: var(--cb-white); }
+    .btn-blue-cb:hover { background: var(--cb-accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,90,160,0.4); }
 
     /* ── VOLUNTEER FORM ── */
-    .form-label { font-weight: 600; font-size: 0.9rem; color: var(--cb-blue); }
-    .form-control:focus { border-color: var(--cb-blue); box-shadow: 0 0 0 0.2rem rgba(26,58,107,0.2); }
-    .form-check-input:checked { background-color: var(--cb-blue); border-color: var(--cb-blue); }
+    .form-label { font-weight: 700; font-size: 1rem; color: var(--cb-blue); }
+    .form-control { border-radius: 6px; font-size: 1rem; }
+    .form-control:focus { border-color: var(--cb-accent); box-shadow: 0 0 0 0.2rem rgba(44,90,160,0.2); }
+    .form-check-input:checked { background-color: var(--cb-accent); border-color: var(--cb-accent); }
 
     /* ── DONATE AMOUNTS ── */
-    .donate-amounts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .donate-amounts { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
     .donate-btn {
-      border: 2px solid var(--cb-red); color: var(--cb-red); background: none;
-      padding: 0.4rem 1.2rem; font-weight: 700; font-size: 0.9rem; border-radius: 4px;
-      cursor: pointer; transition: all 0.15s;
+      border: 2px solid var(--cb-accent); color: var(--cb-accent); background: none;
+      padding: 0.5rem 1.5rem; font-weight: 800; font-size: 1rem; border-radius: 6px;
+      cursor: pointer; transition: all 0.3s ease;
     }
-    .donate-btn:hover, .donate-btn.active { background: var(--cb-red); color: var(--cb-white); }
+    .donate-btn:hover, .donate-btn.active { background: var(--cb-accent); color: var(--cb-white); transform: scale(1.05); }
 
     /* ── FOOTER ── */
     footer { background: var(--cb-black); color: rgba(255,255,255,0.55); padding: 32px 0; font-size: 0.82rem; text-align: center; }
